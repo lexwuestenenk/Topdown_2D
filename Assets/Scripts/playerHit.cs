@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class playerHit : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public float playerDamage; 
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if(other.CompareTag("Breakable"))
-        {
+        if(other.CompareTag("Breakable")) {
             other.GetComponent<Breakable>().Destroy();
+        }
+
+        else if(other.CompareTag("Enemy")) {
+           other.GetComponent<hitDetect>().takeDamage(playerDamage);
         }
     }
 }

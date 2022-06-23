@@ -15,6 +15,7 @@ public class npcDialog : MonoBehaviour
     public GameObject dialogBox;
     public Text dialogText;
     public GameObject nextArrow;
+    public GameObject interactButton;
 
     private string dialog;
     private float textDelay = 0.1f;
@@ -29,15 +30,11 @@ public class npcDialog : MonoBehaviour
     // Update is called once per frame.
     void Update()
     {        
-        
-        if(_pause) {
-            nextArrow.SetActive(true);
-        } else {
-            nextArrow.SetActive(false);
-        }
-
         if(Input.GetButtonDown("Interact") && _interactionActive) {
             _pause = !_pause;
+            if(!_pause) {
+                nextArrow.SetActive(false);
+            }
         }
 
         // Dialog speedup when pressing Run button (shift)
@@ -56,6 +53,7 @@ public class npcDialog : MonoBehaviour
                 dialogBox.SetActive(false);
                 audioObject.PlayOneShot(interactClick);
                 _pause = false;
+                nextArrow.SetActive(false);
                 StopCoroutine("PlayText");
                 dialogText.text = "";
             }
@@ -73,6 +71,7 @@ public class npcDialog : MonoBehaviour
     {
         if(other.CompareTag("Player")) {
             playerInRange = true;
+            interactButton.SetActive(true);
         }
     }
 
@@ -81,6 +80,7 @@ public class npcDialog : MonoBehaviour
     {
         if(other.CompareTag("Player")) {
             playerInRange = false;
+            interactButton.SetActive(false);
 
             if(dialogBox.activeInHierarchy) {
                 dialogBox.SetActive(false);
@@ -110,9 +110,9 @@ public class npcDialog : MonoBehaviour
                 audioObject.PlayOneShot(talkingSound, 3f);
             }
 
+            nextArrow.SetActive(true);
             _pause = true;
         }
-
         Debug.Log("Foreach loop ended");
         _interactionActive = false;
     }

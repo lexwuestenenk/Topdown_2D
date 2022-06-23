@@ -13,12 +13,6 @@ public class potDestroy : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void Destroy()
     {
         animator.SetBool("Destroy", true);

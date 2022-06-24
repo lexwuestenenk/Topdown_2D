@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 6141528545404193434}
   - component: {fileID: 3439095209389748268}
   - component: {fileID: 4106498125897805247}
-  - component: {fileID: 6585520992837326030}
   - component: {fileID: 8719754737079938589}
+  - component: {fileID: -6013626737882235958}
   m_Layer: 0
   m_Name: playerHouseSign
   m_TagString: Untagged
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -723588897
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 4479181887894498110, guid: 7a8f30b54548b7d4a84344389b6450fa,
     type: 3}
@@ -139,23 +139,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.624823}
   m_EdgeRadius: 0
---- !u!114 &6585520992837326030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8460705675007808371}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f665d16f07b2f3542833ca5283c33bde, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  audioObject: {fileID: 8719754737079938589}
-  dialogBox: {fileID: 0}
-  dialogText: {fileID: 0}
-  dialog: Player's House
-  playerInRange: 0
 --- !u!82 &8719754737079938589
 AudioSource:
   m_ObjectHideFlags: 0
@@ -252,3 +235,24 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6013626737882235958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8460705675007808371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99425fb05313734e849f0c778e41b26, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioObject: {fileID: 0}
+  interactClick: {fileID: 0}
+  talkingSound: {fileID: 0}
+  dialogBox: {fileID: 0}
+  dialogText: {fileID: 0}
+  nextArrow: {fileID: 0}
+  interactButton: {fileID: 0}
+  characterDialog: []
+  playerInRange: 0

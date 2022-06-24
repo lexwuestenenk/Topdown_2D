@@ -5,7 +5,7 @@ using UnityEngine;
 public class playerHit : MonoBehaviour
 {
 
-    public float playerDamage; 
+    public int playerDamage; 
 
     void OnTriggerEnter2D(Collider2D other)
     {
@@ -14,7 +14,7 @@ public class playerHit : MonoBehaviour
         }
 
         else if(other.CompareTag("Enemy")) {
-           other.GetComponent<hitDetect>().takeDamage(playerDamage);
+           other.GetComponent<Log>().TakeDamage(playerDamage);
         }
     }
 }

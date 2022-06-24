@@ -20,6 +20,10 @@ public class Log : Enemy
     void Update()
     {
         CheckDistance();
+        if(health <= 0)
+        {
+            this.gameObject.SetActive(false);
+        }
     }
 
     void CheckDistance()
@@ -27,5 +31,10 @@ public class Log : Enemy
         if(Vector3.Distance(target.position, transform.position) <= chaseRadius && Vector3.Distance(target.position, transform.position) >= attackRadius) {
             transform.position = Vector3.MoveTowards(transform.position, target.position, moveSpeed * Time.deltaTime);
         }
+    }
+
+    public void TakeDamage(int playerDamage)
+    {
+        health = health - playerDamage;
     }
 }

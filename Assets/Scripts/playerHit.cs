@@ -7,6 +7,8 @@ public class playerHit : MonoBehaviour
 
     public int playerDamage; 
 
+    // Function gets called when player's weapon collider trigger hits a collider.
+    // It will then compare tags and act according to those. 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Breakable")) {

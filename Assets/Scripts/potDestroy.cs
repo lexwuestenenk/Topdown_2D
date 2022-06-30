@@ -13,12 +13,8 @@ public class Breakable : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    // Function can be called from anywhere. This gets called when the an object is hit by the player's sword, 
+    // and has a "Breakable" tag. This can be used for anything that should be breakable. 
     public void Destroy()
     {
         animator.SetBool("Destroy", true);

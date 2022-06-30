@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// THIS SCRIPT IS CURRENTLY UNUSED! //
+
 public class Inventory : ScriptableObject
 {
     [SerializeField] List<GameObject> items = new List<GameObject>();

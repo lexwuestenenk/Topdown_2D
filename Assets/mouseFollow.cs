@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
  
+// THIS SCRIPT IS CURRENTLY UNUSED! //
+
 public class mouseFollow : MonoBehaviour {
  
     private Vector3 mousePosition;

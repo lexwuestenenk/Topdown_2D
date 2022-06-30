@@ -15,11 +15,13 @@ public class sceneTransition : MonoBehaviour
 
     void Update()
     {
+        // Load scene specified in sceneToLoad. This is used to enter and exit buildings, caves, etc.
         if(Input.GetButtonDown("Interact") && inTrigger) {
             SceneManager.LoadScene(sceneToLoad);
         }
     }
 
+    // Make Interact popup visible when player enters trigger.
     public void OnTriggerStay2D(Collider2D other)
     {
         if(other.CompareTag("Player") && !other.isTrigger) {
@@ -28,6 +30,7 @@ public class sceneTransition : MonoBehaviour
         }
     }
 
+    // Make Interact popup visible when player exits trigger.
     public void OnTriggerExit2D(Collider2D other)
     {
         if(other.CompareTag("Player") && !other.isTrigger)

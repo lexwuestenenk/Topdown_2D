@@ -38,7 +38,7 @@ public class Sign : MonoBehaviour
         }
     }
 
-    // function gets called when player enters trigger
+    // If an object with the player tag enters the trigger, it will make the Interact popup visible. 
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player")) {
@@ -47,7 +47,7 @@ public class Sign : MonoBehaviour
         }
     }
 
-    // function gets called when player exits trigger.
+    // If an object with the player tag exits the trigger, it will make the Interact popup invisible. 
     void OnTriggerExit2D(Collider2D other)
     {
         if(other.CompareTag("Player")) {

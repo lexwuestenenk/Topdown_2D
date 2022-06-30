@@ -55,11 +55,11 @@ TagManager:
   - name: Water
     uniqueID: 4100148689
     locked: 0
-  - name: Water_Details
-    uniqueID: 3547578801
-    locked: 0
   - name: Water_Walkable
     uniqueID: 2602419883
+    locked: 0
+  - name: Water_Details
+    uniqueID: 3547578801
     locked: 0
   - name: Overworld_Details_NoCollide
     uniqueID: 2740579467

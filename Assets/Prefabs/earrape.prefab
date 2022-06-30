@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -723588897
-  m_SortingLayer: 10
+  m_SortingLayer: 11
   m_SortingOrder: 0
   m_Sprite: {fileID: 8387997009269029421, guid: 1767b00f60bb38245b4b58338599a4fe,
     type: 3}
@@ -126,8 +126,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioObject: {fileID: 8065106236835220095}
   dialogBox: {fileID: 0}
+  interactPopup: {fileID: 0}
+  nextArrow: {fileID: 0}
   dialogText: {fileID: 0}
-  dialog: suffer
+  dialog: 
   playerInRange: 0
 --- !u!82 &8065106236835220095
 AudioSource:

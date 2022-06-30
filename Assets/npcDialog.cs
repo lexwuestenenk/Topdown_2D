@@ -21,6 +21,7 @@ public class npcDialog : MonoBehaviour
     private float textDelay = 0.1f;
     private bool _pause = false;
     private bool _interactionActive = false;
+    public bool _needsTextPrint;
 
     public List<string> characterDialog = new List<string>();
     
@@ -93,27 +94,45 @@ public class npcDialog : MonoBehaviour
 
     IEnumerator PlayText()
     {
-        foreach (var item in characterDialog) {
-            Debug.Log(_pause);
-            _interactionActive = true;
+        if (_needsTextPrint) {
+            foreach (var item in characterDialog) {
+                Debug.Log(_pause);
+                _interactionActive = true;
 
-            while(_pause) {
-                yield return null;
+                while(_pause) {
+                    yield return null;
+                }
+
+                dialogText.text = "";
+                dialog = item.ToString();
+
+                foreach (char c in dialog) {
+                    dialogText.text += c;
+                    yield return new WaitForSeconds(textDelay);
+                    audioObject.PlayOneShot(talkingSound, 3f);
+                }
+
+                nextArrow.SetActive(true);
+                _pause = true;
             }
+            Debug.Log("Foreach loop ended");
+            _interactionActive = false;
+        } else {
+                foreach (var item in characterDialog) {
+                    Debug.Log(_pause);
+                    _interactionActive = true;
 
-            dialogText.text = "";
-            dialog = item.ToString();
+                    while(_pause) {
+                        yield return null;
+                    }
 
-            foreach (char c in dialog) {
-                dialogText.text += c;
-                yield return new WaitForSeconds(textDelay);
-                audioObject.PlayOneShot(talkingSound, 3f);
-            }
+                    dialogText.text = item.ToString();   
 
-            nextArrow.SetActive(true);
-            _pause = true;
+                    nextArrow.SetActive(true);
+                    _pause = true;
+                }
+            Debug.Log("Foreach loop ended");
+            _interactionActive = false;
         }
-        Debug.Log("Foreach loop ended");
-        _interactionActive = false;
     }
 }
